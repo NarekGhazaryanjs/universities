@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import { useRef } from 'react/cjs/react.production.min';
 import './App.css';
+import Button from './components/Button/Button';
+import Card from './components/Card/Card';
+import Input from './components/Input/Input';
+import List from './components/List/List';
+import Wrapper from './ui/Wrapper/Wrapper';
 
-function App() {
+const App = () => {
+  const searchCountryRef = useRef('')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Wrapper>
+      <Card>
+        <Input propsRef={searchCountryRef} />
+        <Button> search universities </Button>
+      </Card>
+
+      <Card>
+        <List>
+  
+        </List>
+      </Card>
+    </Wrapper>
+  )
 }
 
-export default App;
+export default App
